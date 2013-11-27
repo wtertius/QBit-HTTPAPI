@@ -1,0 +1,11 @@
+Source: libqbit-httpapi-perl
+Section: perl
+Priority: extra
+Maintainer: Sergei Svistunov <sergei-svistunov@yandex.ru>
+Build-Depends: debhelper (>= 8.0.0), perl, libtest-deep-perl, libqbit-perl, libqbit-webinterface-perl, libxml-simple-perl, libyaml-libyaml-perl
+Standards-Version: 3.9.4
+
+Package: libqbit-httpapi-perl
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}, perl, libqbit-perl, libqbit-webinterface-perl, libxml-simple-perl, libyaml-libyaml-perl
+Description: Helper for create HTTP based API.
