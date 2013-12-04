@@ -1,3 +1,11 @@
+libqbit-httpapi-perl (0.002) saucy; urgency=low
+
+  * Use foreach but not each to do not leave iterator.
+
+  * Fix params checking.
+
+ -- Sergei Svistunov <sergei-svistunov@yandex.ru>  Wed, 04 Dec 2013 18:49:00 +0400
+
 libqbit-httpapi-perl (0.001) saucy; urgency=low
 
   * Initial commit
