@@ -98,7 +98,9 @@ sub build_response {
 
         try {
             my %params;
-            while (my ($param, $properties) = each %{$methods->{$path}{$method}{'attrs'}{'params'} || {}}) {
+            foreach my $param (keys %{$methods->{$path}{$method}{'attrs'}{'params'} || {}}) {
+                my $properties = $methods->{$path}{$method}{'attrs'}{'params'}{$param};
+
                 my $value =
                     $properties->{'is_array'}
                   ? $self->request->param_array($param)
