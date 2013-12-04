@@ -98,12 +98,15 @@ sub build_response {
 
         try {
             my %params;
-            foreach my $param (keys(%{$methods->{$path}{$method}{'attrs'}{'params'} || {}})) {
+            while (my ($param, $properties) = each %{$methods->{$path}{$method}{'attrs'}{'params'} || {}}) {
                 my $value =
-                    $methods->{$path}{$method}{'attrs'}{'params'}{$param}{'is_array'}
+                    $properties->{'is_array'}
                   ? $self->request->param_array($param)
                   : $self->request->param($param);
-                throw Exception::BadArguments gettext('Missed required parameter "%s"', $param) unless defined($value);
+
+                throw Exception::BadArguments gettext('Missed required parameter "%s"', $param)
+                  if $properties->{'is_required'} && (!defined($value) || ($properties->{'is_array'} && !@$value));
+
                 $params{$param} = $value if defined($value);
             }
             $api->pre_run($method, \%params);
