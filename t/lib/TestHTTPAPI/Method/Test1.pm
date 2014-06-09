@@ -8,7 +8,7 @@ sub method1 : METHOD : PARAMS(prm, !rprm, aprm[], !raprm[]) : TITLE('Test method
     my ($self, %opts) = @_;
 }
 
-sub method2 : METHOD : TITLE('Test method 2') {
+sub method2 : METHOD : TITLE('Test method - 2') {
     my ($self, %opts) = @_;
 }
 
