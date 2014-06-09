@@ -42,7 +42,7 @@ cmp_deeply(
                 sub     => ignore,
             },
             method2 => {
-                attrs   => {title => 'Test method 2'},
+                attrs   => {title => 'Test method - 2'},
                 package => 'TestHTTPAPI::Method::Test1',
                 sub     => ignore,
             }

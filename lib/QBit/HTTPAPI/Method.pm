@@ -36,7 +36,7 @@ sub MODIFY_CODE_ATTRIBUTES {
     foreach my $attr (@attrs) {
         if ($attr =~ /^METHOD$/) {
             $package->_register_method($sub);
-        } elsif ($attr =~ /^TITLE(?:\s*\(\s*'\s*([\w\d\s]+)\s*'\s*\))?$/) {
+        } elsif ($attr =~ /^TITLE(?:\s*\(\s*'\s*([\w\d\s-]+)\s*'\s*\))?$/) {
             $package->_set_method_attr($sub, title => $1);
         } elsif ($attr =~ /^PARAMS\s*\((.+)\)\s*$/) {
             my @vars = split(/\s*,\s*/, $1);
