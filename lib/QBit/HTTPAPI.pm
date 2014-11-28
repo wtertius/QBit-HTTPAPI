@@ -4,7 +4,7 @@ use qbit;
 
 use QBit::WebInterface::Response;
 
-use XML::Simple;
+use QBit::HTTPAPI::XML;
 use YAML::XS;
 
 eval {require Exception::Request::UnknownMethod};
@@ -22,9 +22,7 @@ sub response {
 our %SERIALIZERS = (
     xml => {
         content_type => 'application/xml; charset=UTF-8',
-        sub          => sub {
-            return \XMLout($_[0], RootName => 'response', XMLDecl => '<?xml version="1.0" encoding="utf-8" ?>');
-        },
+        sub          => \&QBit::HTTPAPI::XML::pl2xml,
     },
     json => {
         content_type => 'application/json; charset=UTF-8',
