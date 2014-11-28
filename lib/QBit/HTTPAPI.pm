@@ -29,7 +29,7 @@ our %SERIALIZERS = (
     json => {
         content_type => 'application/json; charset=UTF-8',
         sub          => sub {
-            return \to_json($_[0], pretty => TRUE);
+            return \to_json($_[0], pretty => $_[1]);
         },
     },
     yaml => {
@@ -114,7 +114,7 @@ sub build_response {
             $api->pre_run($method, \%params);
             my $ref = $methods->{$path}{$method}{'sub'}($api, %params);
             $self->response->content_type($SERIALIZERS{$format}->{'content_type'});
-            $self->response->data($SERIALIZERS{$format}->{'sub'}({result => 'ok', data => $ref}));
+            $self->response->data($SERIALIZERS{$format}->{'sub'}({result => 'ok', data => $ref}, $self->request->param('pretty')));
             $api->post_run($method, \%params, $self->response->data());
         }
         catch {
@@ -122,7 +122,7 @@ sub build_response {
             $api->on_error($method, $e);
             $self->response->content_type($SERIALIZERS{$format}->{'content_type'});
             $self->response->data(
-                $SERIALIZERS{$format}->{'sub'}({result => 'error', message => $e->message(), error_type => ref($e)}));
+                $SERIALIZERS{$format}->{'sub'}({result => 'error', message => $e->message(), error_type => ref($e)}, $self->request->param('pretty')));
         };
     } else {
         $self->response->status(404);
