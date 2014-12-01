@@ -3,9 +3,9 @@ package QBit::HTTPAPI::XML;
 =encoding UTF-8
 =cut
 
-=head1 Описание
+=head1 Description
 
-Сериализует структуру perl в xml.
+Serialise perl sructure to xml.
 
 =cut
 
@@ -18,9 +18,10 @@ sub pl2xml {
     my ($data, $pretty) = @_;
 
     my $cr = $pretty ? "\n" : '';
-    my $xml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>$cr<response>"
-        . _pl2xml($data, 1, pretty => $pretty)
-        . "$cr</response>";
+    my $xml =
+        "<?xml version=\"1.0\" encoding=\"utf-8\" ?>$cr<response>"
+      . _pl2xml($data, 1, pretty => $pretty)
+      . "$cr</response>";
     return \$xml;
 }
 
