@@ -1,3 +1,15 @@
+libqbit-httpapi-perl (0.003) saucy; urgency=low
+
+  * Replace russian description by english one.
+
+  * Non-pretty by default for xml.
+
+  * Show non-pretty json by default.
+
+  * Allow '-' in TITLE sub attribute
+
+ -- Sergei Svistunov <sergei-svistunov@yandex.ru>  Mon, 08 Dec 2014 19:35:08 +0400
+
 libqbit-httpapi-perl (0.002) saucy; urgency=low
 
   * Use foreach but not each to do not leave iterator.
