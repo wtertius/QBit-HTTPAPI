@@ -1,11 +1,13 @@
-Source: libqbit-httpapi-perl
+Source: libtertiusqbit-httpapi-perl
 Section: perl
 Priority: extra
-Maintainer: Sergei Svistunov <sergei-svistunov@yandex.ru>
-Build-Depends: debhelper (>= 8.0.0), perl, libtest-deep-perl, libqbit-perl, libqbit-webinterface-perl, libxml-simple-perl, libyaml-libyaml-perl
+Maintainer: Dmitry Lukiyanchuk <wtertius@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), perl, libtest-deep-perl, libtertiusqbit-perl, libtertiusqbit-webinterface-perl, libxml-simple-perl, libyaml-libyaml-perl
 Standards-Version: 3.9.4
 
-Package: libqbit-httpapi-perl
+Package: libtertiusqbit-httpapi-perl
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}, perl, libqbit-perl, libqbit-webinterface-perl, libxml-simple-perl, libyaml-libyaml-perl
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}, perl, libtertiusqbit-perl, libtertiusqbit-webinterface-perl, libxml-simple-perl, libyaml-libyaml-perl
+Conflicts: libqbit-httpapi-perl
+Replaces: libqbit-httpapi-perl
 Description: Helper for create HTTP based API.

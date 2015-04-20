@@ -1,4 +1,4 @@
-libqbit-httpapi-perl (0.003) saucy; urgency=low
+libtertiusqbit-httpapi-perl (0.003) saucy; urgency=low
 
   * Replace russian description by english one.
 
@@ -10,7 +10,7 @@ libqbit-httpapi-perl (0.003) saucy; urgency=low
 
  -- Sergei Svistunov <sergei-svistunov@yandex.ru>  Mon, 08 Dec 2014 19:35:08 +0400
 
-libqbit-httpapi-perl (0.002) saucy; urgency=low
+libtertiusqbit-httpapi-perl (0.002) saucy; urgency=low
 
   * Use foreach but not each to do not leave iterator.
 
@@ -18,7 +18,7 @@ libqbit-httpapi-perl (0.002) saucy; urgency=low
 
  -- Sergei Svistunov <sergei-svistunov@yandex.ru>  Wed, 04 Dec 2013 18:49:00 +0400
 
-libqbit-httpapi-perl (0.001) saucy; urgency=low
+libtertiusqbit-httpapi-perl (0.001) saucy; urgency=low
 
   * Initial commit
 
