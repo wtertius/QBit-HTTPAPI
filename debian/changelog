@@ -1,3 +1,9 @@
+libtertiusqbit-httpapi-perl (0.004) saucy; urgency=low
+
+  * Rename debian package
+
+ -- Dmitry Lukiyanchuk <tertius@yandex-team.ru>  Mon, 20 Apr 2015 12:39:39 +0300
+
 libtertiusqbit-httpapi-perl (0.003) saucy; urgency=low
 
   * Replace russian description by english one.
